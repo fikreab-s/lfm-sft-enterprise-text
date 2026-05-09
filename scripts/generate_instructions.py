@@ -97,6 +97,9 @@ def gen_scenario():
                    f"{channel} budget by {abs(change_pct)}%? "
                    f"Current spend: ${current_spend}M, ROI: {roi}x.")
 
+    note = ('Diminishing returns expected at higher spend levels. '
+            if change_pct > 0
+            else 'Budget reduction may have delayed carryover effects. ')
     response = (f"## Scenario: {brand} {channel} Budget "
                 f"{'Increase' if change_pct > 0 else 'Decrease'}\n\n"
                 f"| Metric | Current | Projected |\n"
@@ -106,8 +109,7 @@ def gen_scenario():
                 f"${new_spend * roi * (0.95 if change_pct > 0 else 1.0):.1f}M |\n"
                 f"| Marginal ROI | {roi}x | "
                 f"{roi * (0.85 if change_pct > 0 else 1.05):.2f}x |\n\n"
-                f"**Note:** {'Diminishing returns expected at higher spend levels. '
-                if change_pct > 0 else 'Budget reduction may have delayed carryover effects. '}"
+                f"**Note:** {note}"
                 f"Monitor for 2-3 quarters to capture full adstock effect.")
     return instruction, response, "scenario"
 
