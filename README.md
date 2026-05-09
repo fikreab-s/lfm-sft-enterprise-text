@@ -53,9 +53,9 @@ $$\dot{h}(t) = Ah(t) + Bx(t), \quad y(t) = Ch(t) + Dx(t)$$
 
 Discretized via zero-order hold: $\bar{A} = e^{A\Delta}$. SFT modifies the system's response characteristics while preserving temporal stability — my PhD in dynamical systems provides native intuition for how LoRA adapters reshape the model's attractor landscape.
 
-## 🏥 Merck Commercial Analytics Connection
+## 🏥 Enterprise Pharma Application
 
-At Merck, I built instruction-following systems for promotional analytics:
+In enterprise pharma, I built instruction-following systems for promotional analytics:
 
 - **"What was the ROI of email campaigns for Brand X in Q3?"** → Structured JSON
 - **"Compare digital vs. TV effectiveness across the immunology portfolio"** → Analytical comparison with CIs
@@ -63,7 +63,7 @@ At Merck, I built instruction-following systems for promotional analytics:
 
 The SFT pipeline here generalizes this exact pattern: domain data → curated instruction pairs → fine-tuned model → validated outputs.
 
-**Key Merck insight:** Data quality is a hyperparameter. 500 business-validated Q&A pairs outperform 5,000 noisy ones — I apply perplexity filtering, diversity scoring, and business logic validation to every example.
+**Key enterprise pharma insight:** Data quality is a hyperparameter. 500 business-validated Q&A pairs outperform 5,000 noisy ones — I apply perplexity filtering, diversity scoring, and business logic validation to every example.
 
 ## 🚀 Quickstart
 
@@ -103,23 +103,6 @@ python scripts/export_gguf.py --model outputs/sft-checkpoint --quant Q4_0
 | LoRA r=32 (FP16) | 5.2 GB | 4.8M (0.4%) |
 | QLoRA r=32 (4-bit) | **2.8 GB** | 4.8M (0.4%) |
 | Unsloth QLoRA r=32 | **2.1 GB** | 4.8M (0.4%) |
-
-## 🎤 Interview Talking Points
-
-- **"Walk me through your SFT pipeline"** — Data curation → perplexity filtering → diversity scoring → LoRA training → lm-eval-harness → GGUF export → latency benchmarking
-- **"Why Unsloth?"** — 2x faster training, 60% less VRAM vs. vanilla HF. Critical for rapid iteration on small models.
-- **"Data quality as research"** — I treat data as a hyperparameter. At Merck, same model architecture yields 25% different results depending on data curation rigor. I apply the same discipline here.
-
-## 📋 Resume Bullet
-
-> "Built production SFT pipeline for LFM2.5-1.2B with Unsloth/TRL, achieving 88% instruction-following accuracy and 96% JSON validity via LoRA (r=32) with perplexity-filtered domain data and sub-100ms CPU inference."
-
-## 🔗 Liquid AI Connection
-
-- **Stage 1** of Liquid's three-stage recipe (SFT → DPO → Merge)
-- Uses their model (LFM2.5-1.2B-Instruct) and supported frameworks (Unsloth, TRL)
-- Demonstrates narrow-use-case fine-tuning — their recommended enterprise pattern
-- GGUF export for LEAP-compatible edge deployment
 
 ## License
 
