@@ -107,3 +107,11 @@ python scripts/export_gguf.py --model outputs/sft-checkpoint --quant Q4_0
 ## License
 
 MIT
+
+## 📸 Visual Tour
+
+![comparison](viz/comparison.png)
+
+![training](viz/training.gif)
+
+---
