@@ -1,6 +1,9 @@
-# 🔧 LFM2.5 Enterprise SFT Pipeline
+# Enterprise Text SFT (LoRA / QLoRA / Unsloth)
 
-> Production-ready Supervised Fine-Tuning pipeline for Liquid AI's LFM2.5-1.2B-Instruct with LoRA/QLoRA, Unsloth acceleration, and comprehensive evaluation.
+> Comparing fine-tuning methods (LoRA, QLoRA, Unsloth) for adapting small language models to enterprise text tasks: structured JSON output, domain Q&A, and instruction following.
+>
+> **Context:** Explored as part of evaluating which fine-tuning approach best balances accuracy, memory, and speed for on-premise pharma deployments where GPU resources are constrained.
+
 
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
